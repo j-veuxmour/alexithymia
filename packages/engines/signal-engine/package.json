@@ -1,0 +1,29 @@
+{
+  "name": "@alexithymia/engine-signal",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Pure signal scoring, weighting, bandits, hard filters, narrative classification, and regime detection",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@alexithymia/shared-domain": "workspace:*",
+    "@alexithymia/shared-errors": "workspace:*",
+    "@alexithymia/shared-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}
