@@ -53,6 +53,11 @@ describe('SolAmount', () => {
     if (r.ok) expect(r.value).toBe(60n as unknown as bigint);
   });
 
+  it('toLamports unwraps the underlying bigint', () => {
+    const a = unwrap(SolAmount.fromLamports(12_345n));
+    expect(SolAmount.toLamports(a)).toBe(12_345n);
+  });
+
   it('cmp / gte / lte / eq behave consistently', () => {
     const a = unwrap(SolAmount.fromLamports(10n));
     const b = unwrap(SolAmount.fromLamports(20n));

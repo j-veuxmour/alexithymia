@@ -35,6 +35,9 @@ describe('clampBigInt', () => {
     expect(clampBigInt(-1n, 0n, 10n)).toBe(0n);
     expect(clampBigInt(11n, 0n, 10n)).toBe(10n);
   });
+  it('throws on min > max', () => {
+    expect(() => clampBigInt(5n, 10n, 0n)).toThrow(RangeError);
+  });
 });
 
 describe('roundTo', () => {

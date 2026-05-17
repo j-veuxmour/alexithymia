@@ -28,6 +28,14 @@ describe('sleep', () => {
     ac.abort();
     await expect(p).rejects.toBeInstanceOf(CancelledError);
   });
+
+  it('completes normally when a non-aborting signal is supplied', async () => {
+    // Exercises the timer path that detaches the abort listener.
+    const ac = new AbortController();
+    const p = sleep(100, ac.signal);
+    await vi.advanceTimersByTimeAsync(100);
+    await expect(p).resolves.toBeUndefined();
+  });
 });
 
 describe('withTimeout', () => {

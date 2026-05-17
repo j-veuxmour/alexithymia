@@ -44,6 +44,16 @@ describe('BaseError', () => {
     });
   });
 
+  it('toJSON returns the raw cause when it is not an Error', () => {
+    const e = new TestError('msg', { cause: { code: 42 } });
+    expect(e.toJSON()).toMatchObject({ cause: { code: 42 } });
+  });
+
+  it('toJSON returns undefined cause when none was provided', () => {
+    const e = new TestError('msg');
+    expect(e.toJSON().cause).toBeUndefined();
+  });
+
   it('captures a stack trace', () => {
     const e = new TestError('s');
     expect(typeof e.stack).toBe('string');

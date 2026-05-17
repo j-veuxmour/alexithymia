@@ -4,6 +4,7 @@
   "references": [
     { "path": "./packages/shared/errors" },
     { "path": "./packages/shared/utils" },
-    { "path": "./packages/shared/domain" }
+    { "path": "./packages/shared/domain" },
+    { "path": "./packages/engines/pricing-engine" }
   ]
 }

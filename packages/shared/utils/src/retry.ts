@@ -67,8 +67,8 @@ export const retry = async <T>(
       try {
         await sleep(wait, signal);
       } catch (e) {
-        if (e instanceof CancelledError) return err(e);
-        throw e;
+        // sleep() rejects only with CancelledError when its signal aborts.
+        return err(e as CancelledError);
       }
       delay = Math.min(delay * backoffMultiplier, maxDelayMs);
     }

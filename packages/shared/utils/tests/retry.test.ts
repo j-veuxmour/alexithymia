@@ -73,6 +73,26 @@ describe('retry', () => {
     if (!r.ok) expect(r.error).toBeInstanceOf(CancelledError);
   });
 
+  it('returns CancelledError immediately when signal is pre-aborted', async () => {
+    const ac = new AbortController();
+    ac.abort();
+    const fn = vi.fn().mockResolvedValue('never');
+    const r = await retry(fn, {
+      maxAttempts: 3,
+      initialDelayMs: 10,
+      signal: ac.signal,
+    });
+    expect(isErr(r)).toBe(true);
+    if (!r.ok) expect(r.error).toBeInstanceOf(CancelledError);
+    expect(fn).not.toHaveBeenCalled();
+  });
+
+  it('rejects invalid initialDelayMs', async () => {
+    await expect(retry(async () => 1, { maxAttempts: 1, initialDelayMs: -1 })).rejects.toThrow(
+      RangeError,
+    );
+  });
+
   it('rejects invalid maxAttempts', async () => {
     await expect(retry(async () => 1, { maxAttempts: 0, initialDelayMs: 0 })).rejects.toThrow(
       RangeError,
