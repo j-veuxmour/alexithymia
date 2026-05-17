@@ -108,6 +108,44 @@ importers:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@22.19.19)
 
+  packages/engines/signal-engine:
+    dependencies:
+      '@alexithymia/shared-domain':
+        specifier: workspace:*
+        version: link:../../shared/domain
+      '@alexithymia/shared-errors':
+        specifier: workspace:*
+        version: link:../../shared/errors
+      '@alexithymia/shared-utils':
+        specifier: workspace:*
+        version: link:../../shared/utils
+    devDependencies:
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 3.2.4(@types/node@22.19.19)
+
+  packages/engines/strategy-engine:
+    dependencies:
+      '@alexithymia/shared-domain':
+        specifier: workspace:*
+        version: link:../../shared/domain
+      '@alexithymia/shared-errors':
+        specifier: workspace:*
+        version: link:../../shared/errors
+      '@alexithymia/shared-utils':
+        specifier: workspace:*
+        version: link:../../shared/utils
+    devDependencies:
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 3.2.4(@types/node@22.19.19)
+
   packages/shared/domain:
     dependencies:
       '@alexithymia/shared-errors':
