@@ -5,6 +5,8 @@
     { "path": "./packages/shared/errors" },
     { "path": "./packages/shared/utils" },
     { "path": "./packages/shared/domain" },
-    { "path": "./packages/engines/pricing-engine" }
+    { "path": "./packages/engines/pricing-engine" },
+    { "path": "./packages/engines/allocation-engine" },
+    { "path": "./packages/engines/risk-engine" }
   ]
 }

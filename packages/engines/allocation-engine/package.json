@@ -1,0 +1,29 @@
+{
+  "name": "@alexithymia/engine-allocation",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Position sizing: Kelly criterion, fractional Kelly, exposure-aware allocation",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@alexithymia/shared-domain": "workspace:*",
+    "@alexithymia/shared-errors": "workspace:*",
+    "@alexithymia/shared-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}
