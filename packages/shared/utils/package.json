@@ -1,0 +1,27 @@
+{
+  "name": "@alexithymia/shared-utils",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Cross-cutting pure utility helpers (number, time, retry, async)",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@alexithymia/shared-errors": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

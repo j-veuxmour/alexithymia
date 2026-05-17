@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Test & coverage
+coverage/
+.vitest-cache/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code local overrides (project-shared settings.json is tracked; .local is not)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Reference codebase (Meridian) — not part of this project
+_reference/
+
+# Misc
+.turbo/
+.cache/
