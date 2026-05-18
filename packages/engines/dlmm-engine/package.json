@@ -1,0 +1,29 @@
+{
+  "name": "@alexithymia/engine-dlmm",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Pure DLMM logic: bin array preflight, wide-range path, single-side SOL deploy, volatility timeframe normalization",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@alexithymia/shared-domain": "workspace:*",
+    "@alexithymia/shared-errors": "workspace:*",
+    "@alexithymia/shared-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}
